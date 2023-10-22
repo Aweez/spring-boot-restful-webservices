@@ -37,7 +37,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 			HttpHeaders headers, HttpStatusCode status, WebRequest request) {
 
 		ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), "Total Errors: " + ex.getErrorCount() +
-				" First Error: " + ex.getFieldError().getDefaultMessage(),
+				" First Error:" + ex.getFieldError().getDefaultMessage(),
 				request.getDescription(false));
 
 		return new ResponseEntity<Object>(errorDetails, HttpStatus.BAD_REQUEST);
